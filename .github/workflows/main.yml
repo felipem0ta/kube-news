@@ -40,5 +40,5 @@ jobs:
           push: true
           tags: |
             felipemota/kube-news:latest
-            felipemota/kube-news:latest:${{github.RUN_NUMBER}}
+            felipemota/kube-news:${{github.RUN_NUMBER}}
       
