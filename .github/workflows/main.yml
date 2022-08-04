@@ -36,6 +36,7 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.1.0
         with:
+          context: ./src
           file: ./src/Dockerfile
           push: true
           tags: |
