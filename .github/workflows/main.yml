@@ -36,10 +36,30 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.1.0
         with:
+        #FALTOU O CONTEXT
           context: ./src
           file: ./src/Dockerfile
           push: true
           tags: |
             felipemota/kube-news:latest
             felipemota/kube-news:${{github.RUN_NUMBER}}
+            
+
+  CD:
+     runs-on: ubuntu-latest
+
+     steps:
+      - uses: actions/checkout@v3
+      - name: Kubernetes Set Context
+        uses: Azure/k8s-set-context@v3.0
+        with:
+          method: kubeconfig
+          kubeconfig: ${{secrets.KUBE_CONFIG}}
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v4.2
+        with:
+          images: felipemota/kube-news:${{github.RUN_NUMBER}}
+          manifests: |
+            k8s/deployment.yaml
+
       
