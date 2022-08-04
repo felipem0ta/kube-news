@@ -82,9 +82,7 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000 #Porta Utilizada pelo k3d
-<<<<<<< HEAD
+      #Porta Utilizada pelo k3d
+      nodePort: 30000 
   type: LoadBalancer
-=======
-  type: LoadBalancer
->>>>>>> iac-devops
+
