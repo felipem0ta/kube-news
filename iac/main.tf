@@ -9,7 +9,6 @@ terraform {
 
 provider "digitalocean" {
   token = var.do_token
-  #"dop_v1_9757e6cbeb36db4f59cb0c6da3f8c27c66be2af95a22e9f7edff4f3f4bb5eb41"
 }
 
 resource "digitalocean_kubernetes_cluster" "cana_brava" {
@@ -24,13 +23,6 @@ resource "digitalocean_kubernetes_cluster" "cana_brava" {
     size       = "s-2vcpu-4gb"
     node_count = 3
   }
-}
-
-resource "digitalocean_kubernetes_node_pool" "canabrava_premium" {
-  cluster_id = digitalocean_kubernetes_cluster.cana_brava.id
-  name       = "premium"
-  size       = "s-4vcpu-8gb"
-  node_count = 2
 }
 
 variable "do_token" {}
