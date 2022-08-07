@@ -47,7 +47,7 @@ kind: Deployment
 metadata:
   name: kubenews
 spec:
-  replicas: 8
+  replicas: 2
   selector:
     matchLabels:
       app: kubenews
@@ -62,7 +62,7 @@ spec:
     spec:
       containers:
         - name: kubenews
-          image: felipemota/kube-news:v2
+          image: felipemota/kube-news:latest
           env: 
           - name: DB_DATABASE
             value: "kubedb"

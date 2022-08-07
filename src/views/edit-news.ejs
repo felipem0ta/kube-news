@@ -37,7 +37,7 @@
     <div class="container">
       <main>
         <div class="py-2 text-center">
-          <h2>Novo Post</h2>
+          <h2>Novo Recado</h2>
         </div>
 
         <div class="row g-5">
@@ -57,15 +57,11 @@
                 <div class="col-12">
                   <label for="resumo" class="form-label">Resumo: <span class="text-muted"></span></label>
                   <input type="text" class="form-control" id="resumo" name="resumo" placeholder="Resumo da Notícia"
-                    pattern=".{1,100}"
-                    required>
-                  <div class="invalid-feedback">
-                    Esse campo é obrigatório e deve ter no máximo 50 caracteres
-                  </div>
+                    pattern=".{1,100}">
                 </div>
                 <div class="col-12">
                   <label for="address" class="form-label">Notícia:</label>
-                  <textarea class="form-control" id="address" name="description" rows="20" required></textarea>
+                  <textarea class="form-control" id="address" name="description" rows="10" required></textarea>
                   <div class="invalid-feedback">
                     Esse campo é obrigatório
                   </div>
